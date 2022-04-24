@@ -22,7 +22,7 @@ body {
 
 .name-header {
     font-size: 5rem;
-    margin-top: 110px;
+    margin-top: 50px;
     margin-bottom: 5px;
     transition: 0.1s;
 }
@@ -62,7 +62,7 @@ a:hover {
 }
 
 .main-image {
-    max-width: 600px;
+    max-width: 500px;
     width: 100%;
     height: auto;
     margin-bottom: 40px;
@@ -79,7 +79,7 @@ a:hover {
     flex-wrap: wrap;
     max-width: 600px;
     font-size: 0.9rem;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .features-list > div {
