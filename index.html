@@ -12,15 +12,17 @@
     <meta name="apple-itunes-app" content="app-id=1563251210">
 
     <meta property="og:title" content="SwitchBuddy: Better way to transfer screenshots from Nintendo Switch">
+    <meta property="description"
+          content="Transfer screenshots and videos with fewer taps & hassle">
     <meta property="og:description"
-          content="Transfer screenshots and videos with much less taps & hassle">
+          content="Transfer screenshots and videos with fewer taps & hassle">
 
     <meta property="og:url" content="https://switchbuddy.app">
 
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:title" content="SwitchBuddy: Better way to transfer screenshots from Nintendo Switch"/>
     <meta name="twitter:description"
-          content="Transfer screenshots and videos with much less taps & hassle"/>
+          content="Transfer screenshots and videos with fewer taps & hassle"/>
     <meta name="twitter:image"
           content="https://switchbuddy.app/SwitchBuddy_transfer-screenshots-from-switch-twitter.png"/>
 
@@ -65,12 +67,22 @@
 </main>
 
 <section class="container">
-    <h2>Features</h2>
+    <h2 class="gradient-text mb-md">Features</h2>
 
+    <div id="featuresContainer">
+
+    </div>
+</section>
+
+<section class="container screenshots-container">
+    <img src="Screenshots/SwitchBuddy-screenshots-1-6-0_no1.png" alt="">
+    <img src="Screenshots/SwitchBuddy-screenshots-1-6-0_no2.png" alt="">
+    <img src="Screenshots/SwitchBuddy-screenshots-1-6-0_no3.png" alt="">
+    <img src="Screenshots/SwitchBuddy-screenshots-new3.png" alt="">
 </section>
 
 <section class="container">
-    <h2 class="mb-md">Reviews</h2>
+    <h2 class="mb-md gradient-text">Reviews</h2>
     <h3>Rating 4.8 in the App Store, 300+ ratings</h3>
     <div id="reviewsContainer">
 
@@ -78,11 +90,12 @@
 </section>
 
 <section class="container">
-    <div class="badges-container">
+    <div class="badges-container" style="justify-content: center">
         <a href="https://apps.apple.com/app/switchbuddy/id1563251210" target="_blank"
            style="margin-top: 15px; margin-left: 25px" class="appstore-badge" title="Download for iPhone & iPad">
             <img style="width: 180px; height: auto" src="appstore-download.svg" alt="Download on the App Store button">
         </a>
+
 
         <a href="https://play.google.com/store/apps/details?id=cz.gemsi.switchbuddy" target="_blank">
             <img style="width: 230px; height: auto" src="google-play-badge.png"
@@ -90,11 +103,44 @@
         </a>
     </div>
 
+    <div style="text-align: center">
+        <a href="press-kit.html" class="">
+            <img style="width: 200px; height: auto" src="getPressKitBadge.svg" alt="Get the press kit button">
+        </a>
+    </div>
 
-    <a href="press-kit.html" style="margin-top: 10px; padding-bottom: 40px">
-        <img style="width: 200px; height: auto" src="getPressKitBadge.svg" alt="Get the press kit button">
-    </a>
 </section>
+
+<gallery aria-label="Image Full Screen Gallery" id="galleryContainer">
+    <span id="currentTotalSummaryLabel">-/-</span>
+
+    <button class="unstyled-button paging-button" id="leftButton" title="Previous">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+    </button>
+
+    <button class="unstyled-button paging-button" id="rightButton" title="Next">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+    </button>
+
+    <div id="galleryContent">
+        <img id="mainImage" src="" alt="">
+
+    </div>
+
+    <button id="galleryCloseButton" class="unstyled-button" title="Close">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+
+</gallery>
 
 
 <!--TEMPLATES-->
@@ -124,9 +170,20 @@
     </div>
 </template>
 
+<template id="featureCard">
+    <div class="feature-card">
+        <p class="feature-title"></p>
+        <p class="feature-text"></p>
+    </div>
+</template>
+
 <script>
     const reviews = [
-        {'name': "Alex2970686", 'text': "Works great with my Switch. A must-have!", 'title': "Works great!"},
+        {
+            'name': "Alex2970686",
+            'text': "Works great with my Switch. A must-have!",
+            'title': "Works great!"
+        },
         {
             'name': "2adorable",
             'text': "• Super easy to use! • Easy / intuitive app navigation • Delightfully quick save / sharing feature • Tell your neighbors!",
@@ -171,6 +228,45 @@
 
         reviewsContainer.appendChild(reviewNode);
     });
+
+    const features = [
+        {
+            'title': "Super fast",
+            'text': "Transferring your media takes just a few taps and you are done.",
+        },
+        {
+            'title': "Export options",
+            'text': "Export screenshots and videos to Photos library, iCloud Drive or in-app.",
+        },
+        {
+            'title': "Quick share",
+            'text': "Quickly share screenshots with your friends via the system share feature.",
+        },
+        {
+            'title': "Gallery",
+            'text': "View saved screenshots and videos in a gallery organized by games and sorted by date.",
+        },
+        {
+            'title': "With themes",
+            'text': "Make SwitchBuddy yours with themes inspired by Switch and Joy-Cons.",
+        },
+        {
+            'title': "Free app",
+            'text': "SwitchBuddy is totally free, but you can support the app with Tip jar.",
+        },
+    ]
+
+    const featureTemplate = document.getElementById("featureCard");
+    const featuresContainer = document.getElementById("featuresContainer");
+
+    features.forEach((feature) => {
+        const featureNode = featureTemplate.content.cloneNode(true);
+
+        featureNode.querySelector(".feature-text").textContent = feature.text;
+        featureNode.querySelector(".feature-title").textContent = feature.title;
+
+        featuresContainer.appendChild(featureNode);
+    });
 </script>
 
 <script src="https://unpkg.com/@telemetrydeck/sdk/dist/telemetrydeck.min.js" defer></script>
@@ -178,6 +274,8 @@
     window.td = window.td || [];
     td.push(['app', "B4146DD4-B280-43B0-8846-F576069E672F"], ['user', "anonymous"], ['signal']);
 </script>
+
+<script src="gallery.js" defer></script>
 
 </body>
 </html>

@@ -4,6 +4,7 @@
     --background-color: hsla(192, 19%, 98%, 1);
     --card-corner-radius: 12px;
     --yellow: hsla(52, 100%, 47%, 1);
+    --card-background: white;
 }
 
 html, body {
@@ -23,6 +24,12 @@ body {
     padding-bottom: 50px;
 }
 
+button {
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
 a {
     color: black;
     text-decoration: none;
@@ -36,6 +43,18 @@ a:hover {
 
 .mb-md {
     margin-bottom: 10px;
+}
+
+.mx-auto {
+    margin-inline: auto;
+}
+
+.d-block {
+    display: block;
+}
+
+h2 {
+    font-size: 1.7rem;
 }
 
 nav {
@@ -121,7 +140,7 @@ nav .nav-title {
 
 .review-card {
     padding: 20px;
-    background-color: white;
+    background-color: var(--card-background);
     border-radius: var(--card-corner-radius);
     display: flex;
     flex-direction: column;
@@ -158,35 +177,53 @@ nav .nav-title {
     color: var(--yellow);
 }
 
-.name-header > #switch {
-    color: var(--switch-red);
+#featuresContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-gap: 15px;
+    margin-top: 20px;
 }
 
-.name-header > #buddy {
-    color: var(--switch-blue);
+.feature-card {
+    background-color: var(--card-background);
+    border-radius: var(--card-corner-radius);
+    padding: 15px;
 }
 
-.name-header:hover > #switch {
-    color: var(--switch-blue);
+.feature-card .feature-title {
+    font-weight: bolder;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.04rem;
+    font-size: 0.9rem;
 }
 
-.name-header:hover > #buddy {
-    color: var(--switch-red);
+.feature-card .feature-text {
+    opacity: 0.8;
+    font-size: 0.9rem;
 }
 
-.tagline {
-    margin-top: 0;
-    font-weight: 250;
-    font-size: 2.5rem;
-    max-width: 700px;
-    text-align: center;
+section.screenshots-container {
+    display: flex;
+    align-items: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 5px;
+    margin-top: 60px;
 }
 
-.main-image {
-    max-width: 500px;
-    width: 100%;
-    height: auto;
-    margin-bottom: 40px;
+.screenshots-container > img {
+    max-height: 530px;
+    border-radius: 5px;
+    cursor: zoom-in;
+}
+
+.screenshots-container img:last-child {
+    margin-right: auto;
+}
+
+.screenshots-container img:first-child {
+    margin-left: auto;
 }
 
 .features-list {
@@ -224,7 +261,91 @@ nav .nav-title {
     display: flex;
 }
 
-@media only screen and (max-width: 700px)  {
+.gradient-text {
+    background: linear-gradient(to left, hsla(205, 98%, 47%, 1), hsla(205, 98%, 67%, 1));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Gallery styles */
+#galleryContainer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+
+    background-color: rgba(0 0 0 / 0.90);
+    display: none;
+    overflow: hidden;
+}
+
+#galleryContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#galleryContainer #mainImage {
+    display: block;
+    max-width: 90%;
+    max-height: 85%;
+    margin-inline: auto;
+    z-index: 10;
+}
+
+#galleryCloseButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0 0 0 / 0.95);
+    color: white;
+}
+
+#currentTotalSummaryLabel {
+    font-size: 0.9rem;
+    color: lightgrey;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: monospace, monospace;
+}
+
+#mainImage {
+    border-radius: 5px;
+}
+
+.paging-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    padding: 5px;
+    background-color: var(--switch-blue);
+}
+
+.paging-button > svg {
+    width: 50px;
+    height: 50px;
+}
+
+#leftButton {
+    left: 0px;
+}
+
+#rightButton {
+    right: 0px;
+}
+
+@media only screen and (max-width: 700px) {
     .name-header {
         font-size: 2.5rem;
         margin-top: 50px;
@@ -266,11 +387,15 @@ nav .nav-title {
         margin-left: auto;
         margin-right: auto;
         display: block;
-        
+
     }
 
     .badges-container .appstore-badge {
         margin-left: 0 !important;
     }
 
+}
+
+.lightning-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z' clip-rule='evenodd' /%3E%3C/svg%3E");
 }
