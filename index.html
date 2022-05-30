@@ -11,7 +11,7 @@
 
     <meta name="apple-itunes-app" content="app-id=1563251210">
 
-    <meta property="og:title" content="SwitchBuddy: Better way to transfer screenshots from Nintendo Switch">
+    <meta property="og:title" content="SwitchBuddy: Easy screenshot transfer from Nintendo Switch">
     <meta property="description"
           content="Transfer screenshots and videos with fewer taps & hassle">
     <meta property="og:description"
@@ -20,7 +20,7 @@
     <meta property="og:url" content="https://switchbuddy.app">
 
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="SwitchBuddy: Better way to transfer screenshots from Nintendo Switch"/>
+    <meta name="twitter:title" content="SwitchBuddy: Easy screenshot transfer from Nintendo Switch"/>
     <meta name="twitter:description"
           content="Transfer screenshots and videos with fewer taps & hassle"/>
     <meta name="twitter:image"
@@ -45,10 +45,10 @@
 </nav>
 
 <main class="container hero">
-    <img class="hero-image" src="switchbuddy-promo-graphics.png" alt="">
+    <img class="hero-image" src="switchbuddy-hero-image.png" alt="">
 
     <div>
-        <h1>Transfer screenshots from Nintendo&nbsp;Switch</h1>
+        <h1>Easily <span style="position: relative" class="gradient-text animated-gradient">transfer screenshots<span id="andVideos" class="handwritten-text">and videos!</span></span> from Nintendo&nbsp;Switch</h1>
 
         <div class="badges-container">
             <a href="https://apps.apple.com/app/switchbuddy/id1563251210" target="_blank"
@@ -75,15 +75,15 @@
 </section>
 
 <section class="container screenshots-container">
-    <img src="Screenshots/SwitchBuddy-screenshots-1-6-0_no1.png" alt="">
-    <img src="Screenshots/SwitchBuddy-screenshots-1-6-0_no2.png" alt="">
-    <img src="Screenshots/SwitchBuddy-screenshots-1-6-0_no3.png" alt="">
-    <img src="Screenshots/SwitchBuddy-screenshots-new3.png" alt="">
+    <img src="Screenshots/SwitchBuddy-screenshots-1-6-0_no1.png" alt="" loading="lazy">
+    <img src="Screenshots/SwitchBuddy-screenshots-1-6-0_no2.png" alt="" loading="lazy">
+    <img src="Screenshots/SwitchBuddy-screenshots-1-6-0_no3.png" alt="" loading="lazy">
+    <img src="Screenshots/SwitchBuddy-screenshots-new3.png" alt="" loading="lazy">
 </section>
 
 <section class="container">
     <h2 class="mb-md gradient-text">Reviews</h2>
-    <h3>Rating 4.8 in the App Store, 300+ ratings</h3>
+    <h3>Average <span class="decorated-number">4.8</span> in the App Store, <span class="decorated-number">300+</span> ratings</h3>
     <div id="reviewsContainer">
 
     </div>
@@ -104,7 +104,7 @@
     </div>
 
     <div style="text-align: center">
-        <a href="press-kit.html" class="">
+        <a href="https://impresskit.net/5d2ed962-7c0a-4c38-87b6-21b8da3026bf" class="" target="_blank">
             <img style="width: 200px; height: auto" src="getPressKitBadge.svg" alt="Get the press kit button">
         </a>
     </div>
@@ -172,6 +172,9 @@
 
 <template id="featureCard">
     <div class="feature-card">
+        <div class="feature-icon-container">
+            <div class="icon"></div>
+        </div>
         <p class="feature-title"></p>
         <p class="feature-text"></p>
     </div>
@@ -232,27 +235,33 @@
     const features = [
         {
             'title': "Super fast",
-            'text': "Transferring your media takes just a few taps and you are done.",
+            'text': "Transferring your media takes just a few taps and you are\xa0done.",
+            'icon': "lightning"
         },
         {
             'title': "Export options",
-            'text': "Export screenshots and videos to Photos library, iCloud Drive or in-app.",
+            'text': "Export screenshots and videos to Photos library, iCloud Drive or\xa0in-app.",
+            'icon': "save"
         },
         {
             'title': "Quick share",
-            'text': "Quickly share screenshots with your friends via the system share feature.",
+            'text': "Quickly share screenshots with your friends via the system share\xa0feature.",
+            'icon': "share"
         },
         {
             'title': "Gallery",
-            'text': "View saved screenshots and videos in a gallery organized by games and sorted by date.",
+            'text': "View saved screenshots and videos in a gallery organized by games and sorted by\xa0date.",
+            'icon': "picture"
         },
         {
             'title': "With themes",
             'text': "Make SwitchBuddy yours with themes inspired by Switch and Joy-Cons.",
+            'icon': "adjustment"
         },
         {
             'title': "Free app",
-            'text': "SwitchBuddy is totally free, but you can support the app with Tip jar.",
+            'text': "SwitchBuddy is totally free, but you can support the app with Tip\xa0jar.",
+            'icon': "gift"
         },
     ]
 
@@ -264,6 +273,12 @@
 
         featureNode.querySelector(".feature-text").textContent = feature.text;
         featureNode.querySelector(".feature-title").textContent = feature.title;
+
+        const iconContainer = featureNode.querySelector(".feature-icon-container > .icon");
+
+        const iconClass = `${feature.icon}-icon`;
+
+        iconContainer.classList.add(iconClass);
 
         featuresContainer.appendChild(featureNode);
     });
