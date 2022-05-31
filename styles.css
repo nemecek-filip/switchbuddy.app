@@ -267,6 +267,20 @@ nav .nav-title {
     height: 15px;
 }
 
+.media-mentions {
+    display: flex;
+    gap: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.media-mentions img {
+    width: auto;
+    height: 40px;
+}
+
 section.screenshots-container {
     display: flex;
     align-items: flex-start;
@@ -468,25 +482,13 @@ section.screenshots-container {
 }
 
 @media only screen and (max-width: 400px) {
-    body {
-        margin-left: 10px;
-        margin-right: 10px;
+    #featuresContainer {
+        grid-gap: 10px;
     }
 
     .badges-container {
         flex-direction: column;
-    }
-
-    .badges-container .appstore-badge > img {
-        width: 200px !important;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-
-    }
-
-    .badges-container .appstore-badge {
-        margin-left: 0 !important;
+        align-items: center;
     }
 
 }
