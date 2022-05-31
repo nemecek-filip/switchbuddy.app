@@ -26,7 +26,7 @@
     <meta name="twitter:image"
           content="https://switchbuddy.app/SwitchBuddy_transfer-screenshots-from-switch-twitter.png"/>
 
-    <title>SwitchBuddy: Better way to transfer screenshots from Nintendo Switch</title>
+    <title>SwitchBuddy: Easy screenshots transfer from Nintendo Switch</title>
 
     <link href="styles.css" rel="stylesheet">
 </head>
@@ -47,18 +47,19 @@
 <main class="container hero">
     <img class="hero-image" src="switchbuddy-hero-image.png" alt="">
 
-    <div>
+    <div class="position-relative">
+        <div class="pattern-element pattern2 faint-pattern"></div>
         <h1>Easily <span style="position: relative" class="gradient-text animated-gradient">transfer screenshots<span id="andVideos" class="handwritten-text">and videos!</span></span> from Nintendo&nbsp;Switch</h1>
 
         <div class="badges-container">
             <a href="https://apps.apple.com/app/switchbuddy/id1563251210" target="_blank"
-               class="appstore-badge" style="margin-top: 15px" title="Download for iPhone & iPad">
+               class="appstore-badge" title="Download for iPhone & iPad">
                 <img style="width: 180px; height: auto" src="appstore-download.svg"
                      alt="Download on the App Store button">
             </a>
 
             <a href="https://play.google.com/store/apps/details?id=cz.gemsi.switchbuddy" target="_blank">
-                <img style="width: 230px; height: auto" src="google-play-badge.png"
+                <img style="width: 205px; height: auto" src="google-play-badge.png"
                      alt="Download on the Google Play button">
             </a>
         </div>
@@ -74,11 +75,8 @@
     </div>
 </section>
 
-<section class="container screenshots-container">
-    <img src="Screenshots/SwitchBuddy-screenshots-1-6-0_no1.png" alt="" loading="lazy">
-    <img src="Screenshots/SwitchBuddy-screenshots-1-6-0_no2.png" alt="" loading="lazy">
-    <img src="Screenshots/SwitchBuddy-screenshots-1-6-0_no3.png" alt="" loading="lazy">
-    <img src="Screenshots/SwitchBuddy-screenshots-new3.png" alt="" loading="lazy">
+<section class="container screenshots-container position-relative">
+    <div class="pattern1 pattern-element faint-pattern"></div>
 </section>
 
 <section class="container">
@@ -90,20 +88,20 @@
 </section>
 
 <section class="container">
-    <div class="badges-container" style="justify-content: center">
+    <div class="badges-container mb-md" style="justify-content: center">
         <a href="https://apps.apple.com/app/switchbuddy/id1563251210" target="_blank"
-           style="margin-top: 15px; margin-left: 25px" class="appstore-badge" title="Download for iPhone & iPad">
+            class="appstore-badge" title="Download for iPhone & iPad">
             <img style="width: 180px; height: auto" src="appstore-download.svg" alt="Download on the App Store button">
         </a>
 
 
         <a href="https://play.google.com/store/apps/details?id=cz.gemsi.switchbuddy" target="_blank">
-            <img style="width: 230px; height: auto" src="google-play-badge.png"
+            <img style="width: 205px; height: auto" src="google-play-badge.png"
                  alt="Download on the Google Play button">
         </a>
     </div>
 
-    <div style="text-align: center">
+    <div style="text-align: center" class="mb-md">
         <a href="https://impresskit.net/5d2ed962-7c0a-4c38-87b6-21b8da3026bf" class="" target="_blank">
             <img style="width: 200px; height: auto" src="getPressKitBadge.svg" alt="Get the press kit button">
         </a>
@@ -282,6 +280,16 @@
 
         featuresContainer.appendChild(featureNode);
     });
+
+    const screenshotsContainer = document.querySelector('.screenshots-container');
+
+    [1, 2, 3, 4, 6, 7].map((index) => {
+        const image = document.createElement('img');
+        image.loading = "lazy";
+        image.src = `Screenshots/switchbuddy-switch-transfer-tool-${index}.png`
+
+        screenshotsContainer.appendChild(image);
+    })
 </script>
 
 <script src="https://unpkg.com/@telemetrydeck/sdk/dist/telemetrydeck.min.js" defer></script>
