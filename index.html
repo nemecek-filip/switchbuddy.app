@@ -34,7 +34,7 @@
 
 <nav>
     <div class="nav-content">
-        <img src="switchbuddy-icon-small.png" class="nav-icon" alt="">
+        <img src="switchbuddy-icon-small.png" class="nav-icon" alt="" width="180" height="180">
         <h1 class="nav-title">SwitchBuddy</h1>
 
         <a class="presskit-link"
@@ -45,9 +45,12 @@
 </nav>
 
 <main class="container hero">
-    <img class="hero-image" src="switchbuddy-hero-image.png" alt="">
+    <div class="image-container">
+            <img class="hero-image" src="switchbuddy-hero-image.png" alt="" width="864" height="965">
 
-    <div class="position-relative">
+    </div>
+
+    <div class="position-relative content">
         <div class="pattern-element pattern2 faint-pattern"></div>
         <h1>Easily <span style="position: relative" class="gradient-text animated-gradient">transfer screenshots<span
                 id="andVideos" class="handwritten-text">and videos!</span></span> from Nintendo&nbsp;Switch</h1>
@@ -117,8 +120,17 @@
     </div>
 </section>
 
-<section class="container">
-    <div class="badges-container mb-md" style="justify-content: center">
+<section class="container position-relative">
+    <div class="pattern-element pattern2 faint-pattern"></div>
+    <div class="grid-center">
+        <h2 class="mb-md gradient-text">Download now!</h2>
+    </div>
+
+    <div class="mb-md">
+        <img class="download-qr-codes" src="switchbuddy-download-qr-codes.png" alt="" width="1100" height="500">
+    </div>
+
+    <div class="badges-container mb-md mt-lg footer-badges-container" style="justify-content: center">
         <a href="https://apps.apple.com/app/switchbuddy/id1563251210" target="_blank"
            class="appstore-badge" title="Download for iPhone & iPad">
             <img style="width: 180px; height: auto" src="appstore-download.svg" alt="Download on the App Store button">
@@ -317,6 +329,8 @@
         const image = document.createElement('img');
         image.loading = "lazy";
         image.src = `Screenshots/switchbuddy-switch-transfer-tool-${index}.png`
+        image.width = 850
+        image.height = 1700
 
         screenshotsContainer.appendChild(image);
     })

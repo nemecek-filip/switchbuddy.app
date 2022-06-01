@@ -47,6 +47,10 @@ a:hover {
     margin-bottom: 10px;
 }
 
+.mt-lg {
+    margin-top: 30px;
+}
+
 .mx-auto {
     margin-inline: auto;
 }
@@ -78,6 +82,15 @@ h3 {
 
 .handwritten-text {
     font-family: "Bradley Hand", serif;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.grid-center {
+    display: grid;
+    place-content: center;
 }
 
 #andVideos {
@@ -144,6 +157,14 @@ nav .nav-title {
     align-items: center;
     margin-bottom: 60px;
     position: relative;
+}
+
+.hero .image-container {
+    flex: 5;
+}
+
+.hero .content {
+    flex: 4;
 }
 
 .hero .pattern-element {
@@ -296,6 +317,10 @@ section.screenshots-container {
     cursor: zoom-in;
 }
 
+.screenshots-container img:nth-child(odd) {
+    margin-top: 40px;
+}
+
 .screenshots-container img:last-child {
     margin-right: auto;
 }
@@ -358,6 +383,14 @@ section.screenshots-container {
 .pattern2 {
     background-color: transparent;
     background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10h10v10H0V10zM10 0h10v10H10V0z' fill='%230ab9e6' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.download-qr-codes {
+    max-width: 500px;
+    display: block;
+    margin-inline: auto;
+    width: 100%;
+    height: auto;
 }
 
 /* Gallery styles */
@@ -437,15 +470,17 @@ section.screenshots-container {
     right: 0px;
 }
 
+@media only screen and (max-width: 1000px) {
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+}
+
 @media only screen and (max-width: 700px) {
 
     .hero {
         flex-direction: column-reverse;
         margin-top: 60px;
-    }
-
-    .hero > div {
-
     }
 
     .hero .pattern-element {
@@ -467,10 +502,14 @@ section.screenshots-container {
         flex-wrap: nowrap;
         gap: 10px;
         padding: 8px;
+        position: relative;
+        right: -20px;
     }
 
+
+
     #reviewsContainer .review-card:first-child {
-        margin-left: 16px;
+
     }
 
     #reviewsContainer .review-card {
@@ -479,6 +518,13 @@ section.screenshots-container {
         padding: 15px;
     }
 
+    .download-qr-codes {
+        display: none;
+    }
+
+    .badges-container.footer-badges-container {
+        margin-top: 10px;
+    }
 }
 
 @media only screen and (max-width: 400px) {
